@@ -1,5 +1,6 @@
 package com.example.mycalculator
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         var editTextNumberOne=findViewById<EditText>(R.id.editTextNumberOne)
         var editTextNumberTwo=findViewById<EditText>(R.id.editTextNumberTwo)
         var textViewDisplay=findViewById<TextView>(R.id.textViewDisplay)
+        var textViewErrorDisplay=findViewById<TextView>(R.id.textViewErrorDisplay)
 
         //Declaring buttons
         val btnPlus=findViewById<Button>(R.id.btnPlus)
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         val btnDivide=findViewById<Button>(R.id.btnDivide)
         val btnPower=findViewById<Button>(R.id.btnPower)
         val btnSquareRoot=findViewById<Button>(R.id.btnSquareRoot)
+        val btnStatisticFunctions=findViewById<Button>(R.id.btnStatisticFunctions)
 
         //Plus button
         btnPlus?.setOnClickListener {
@@ -101,6 +104,15 @@ class MainActivity : AppCompatActivity() {
             totalSquareRoot= sqrt(number1)
 
             textViewDisplay.text ="Square root: √${editTextNumberOne.text} = $totalSquareRoot "
+        }
+        //Statistic functions button
+        btnStatisticFunctions?.setOnClickListener {
+            Toast.makeText(this@MainActivity, "Statistic functions button clicked", Toast.LENGTH_LONG).show()
+
+            //Redirect to statistic functions page
+            val intent= Intent(this,StatisticFunctions::class.java)
+
+            startActivity(intent);
         }
     }
 }
