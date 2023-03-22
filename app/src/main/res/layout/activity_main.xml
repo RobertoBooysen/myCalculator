@@ -8,14 +8,15 @@
 
     <TextView
         android:id="@+id/textViewDisplay"
-        android:layout_width="251dp"
-        android:layout_height="61dp"
+        android:layout_width="288dp"
+        android:layout_height="65dp"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <EditText
         android:id="@+id/editTextNumberOne"
@@ -180,8 +181,8 @@
 
     <TextView
         android:id="@+id/textViewErrorDisplay"
-        android:layout_width="240dp"
-        android:layout_height="47dp"
+        android:layout_width="348dp"
+        android:layout_height="53dp"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

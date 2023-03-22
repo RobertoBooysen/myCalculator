@@ -1,6 +1,7 @@
 package com.example.mycalculator
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -34,76 +35,118 @@ class MainActivity : AppCompatActivity() {
         btnPlus?.setOnClickListener {
             Toast.makeText(this@MainActivity, "Plus button clicked", Toast.LENGTH_LONG).show()
 
-            var number1=editTextNumberOne.text.toString().toInt()
-            var number2=editTextNumberTwo.text.toString().toInt()
+            if(editTextNumberOne.text.toString()=="" || editTextNumberTwo.text.toString()=="" ){//TextBox validation
+                textViewErrorDisplay.text="Input values in both fields!"
+                textViewErrorDisplay.setTextColor(Color.parseColor("red"))
+            }
+            else{
+                textViewErrorDisplay.text=""//Resetting error message
+                var number1=editTextNumberOne.text.toString().toInt()
+                var number2=editTextNumberTwo.text.toString().toInt()
 
-            var totalPlus: Number=0
-            totalPlus=number1+number2
+                var totalPlus: Number=0
+                totalPlus=number1+number2
 
-            textViewDisplay.text ="Addition:  ${editTextNumberOne.text} + ${editTextNumberTwo.text} = $totalPlus "
+                textViewDisplay.text ="Addition:  ${editTextNumberOne.text} + ${editTextNumberTwo.text} = $totalPlus "
+            }
         }
         //Minus button(The IIE,2023)
         btnMinus?.setOnClickListener {
             Toast.makeText(this@MainActivity, "Minus button clicked", Toast.LENGTH_LONG).show()
 
-            var number1=editTextNumberOne.text.toString().toInt()
-            var number2=editTextNumberTwo.text.toString().toInt()
+            if(editTextNumberOne.text.toString()=="" || editTextNumberTwo.text.toString()=="" ){//TextBox validation
+                textViewErrorDisplay.text="Input values in both fields!"
+                textViewErrorDisplay.setTextColor(Color.parseColor("red"))
+            }
+            else {
+                textViewErrorDisplay.text = ""//Resetting error message
+                var number1=editTextNumberOne.text.toString().toInt()
+                var number2=editTextNumberTwo.text.toString().toInt()
 
-            var totalMinus: Number=0
-            totalMinus=number1-number2
+                var totalMinus: Number=0
+                totalMinus=number1-number2
 
-            textViewDisplay.text ="Subtraction:  ${editTextNumberOne.text} - ${editTextNumberTwo.text} = $totalMinus "
+                textViewDisplay.text ="Subtraction:  ${editTextNumberOne.text} - ${editTextNumberTwo.text} = $totalMinus "
+            }
         }
         //Multiply button(The IIE,2023)
         btnMultiply?.setOnClickListener {
             Toast.makeText(this@MainActivity, "Multiply button clicked", Toast.LENGTH_LONG).show()
 
-            var number1=editTextNumberOne.text.toString().toInt()
-            var number2=editTextNumberTwo.text.toString().toInt()
+            if(editTextNumberOne.text.toString()=="" || editTextNumberTwo.text.toString()=="" ){//TextBox validation
+                textViewErrorDisplay.text="Input values in both fields!"
+                textViewErrorDisplay.setTextColor(Color.parseColor("red"))
+            }
+            else {
+                textViewErrorDisplay.text = ""//Resetting error message
+                var number1=editTextNumberOne.text.toString().toInt()
+                var number2=editTextNumberTwo.text.toString().toInt()
 
-            var totalMultiply: Number=0
-            totalMultiply=number1*number2
+                var totalMultiply: Number=0
+                totalMultiply=number1*number2
 
-            textViewDisplay.text ="Multiplication:  ${editTextNumberOne.text} * ${editTextNumberTwo.text} = $totalMultiply "
+                textViewDisplay.text ="Multiplication:  ${editTextNumberOne.text} * ${editTextNumberTwo.text} = $totalMultiply "
+            }
         }
         //Division button(The IIE,2023)
         btnDivide?.setOnClickListener {
             Toast.makeText(this@MainActivity, "Divide button clicked", Toast.LENGTH_LONG).show()
 
-            var number1=editTextNumberOne.text.toString().toInt()
-            var number2=editTextNumberTwo.text.toString().toInt()
-
-            var totalDivide: Number=0
-            //If-else statement so user can't divide by 0
-            if(number2==0){
-                textViewDisplay.text ="Can't divide by 0 !"
+            if(editTextNumberOne.text.toString()=="" || editTextNumberTwo.text.toString()=="" ){//TextBox validation
+                textViewErrorDisplay.text="Input values in both fields!"
+                textViewErrorDisplay.setTextColor(Color.parseColor("red"))
             }
-            else{
-                totalDivide=number1/number2
-                textViewDisplay.text ="Division:  ${editTextNumberOne.text} / ${editTextNumberTwo.text} = $totalDivide "
+            else {
+                textViewErrorDisplay.text = ""//Resetting error message
+                var number1=editTextNumberOne.text.toString().toInt()
+                var number2=editTextNumberTwo.text.toString().toInt()
+
+                var totalDivide: Number=0
+                //If-else statement so user can't divide by 0
+                if(number2==0){
+                    textViewDisplay.text ="Can't divide by 0 !"
+                }
+                else{
+                    totalDivide=number1/number2
+                    textViewDisplay.text ="Division:  ${editTextNumberOne.text} / ${editTextNumberTwo.text} = $totalDivide "
+                }
             }
         }
         //Power button(The IIE,2023)
         btnPower?.setOnClickListener {
             Toast.makeText(this@MainActivity, "Power button clicked", Toast.LENGTH_LONG).show()
 
-            var number1=editTextNumberOne.text.toString().toInt()
-            var number2=editTextNumberTwo.text.toString().toInt()
+            if(editTextNumberOne.text.toString()=="" || editTextNumberTwo.text.toString()=="" ){//TextBox validation
+                textViewErrorDisplay.text="Input values in both fields!"
+                textViewErrorDisplay.setTextColor(Color.parseColor("red"))
+            }
+            else {
+                textViewErrorDisplay.text = ""//Resetting error message
+                var number1=editTextNumberOne.text.toString().toInt()
+                var number2=editTextNumberTwo.text.toString().toInt()
 
-            var totalPower: Number=0
-            totalPower= number1.toDouble().pow(number2.toDouble())
+                var totalPower: Number=0
+                totalPower= number1.toDouble().pow(number2.toDouble())
 
-            textViewDisplay.text ="Power: ${editTextNumberOne.text} to the power of ${editTextNumberTwo.text}= $totalPower "
+                textViewDisplay.text ="Power: ${editTextNumberOne.text} to the power of ${editTextNumberTwo.text}= $totalPower "
+            }
         }
         //Square root button(The IIE,2023)
         btnSquareRoot?.setOnClickListener {
             Toast.makeText(this@MainActivity, "Square root button clicked", Toast.LENGTH_LONG).show()
 
-            var number1=editTextNumberOne.text.toString().toDouble()
-            var totalSquareRoot: Number=0
-            totalSquareRoot= sqrt(number1)
+            if(editTextNumberOne.text.toString()=="" ){//TextBox validation
+                textViewErrorDisplay.text="Input a value in the first field!"
+                textViewErrorDisplay.setTextColor(Color.parseColor("red"))
+            }
+            else {
+                textViewErrorDisplay.text=""//Resetting error message
+                var number1=editTextNumberOne.text.toString().toDouble()
+                var totalSquareRoot: Number=0
+                totalSquareRoot= sqrt(number1)
 
-            textViewDisplay.text ="Square root: √${editTextNumberOne.text} = $totalSquareRoot "
+                textViewDisplay.text ="Square root: √${editTextNumberOne.text} = $totalSquareRoot "
+            }
         }
         //Statistic functions button(The IIE,2023)
         btnStatisticFunctions?.setOnClickListener {

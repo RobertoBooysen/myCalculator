@@ -22,6 +22,7 @@ class StatisticFunctions : AppCompatActivity() {
         var editTextStatisticNumber = findViewById<EditText>(R.id.editTextStatisticNumber)
         var textViewDisplayStoredNumbers = findViewById<TextView>(R.id.textViewDisplayStoredNumbers)
         var textViewDisplayAnswer = findViewById<TextView>(R.id.textViewDisplayAnswer)
+        var textViewDisplayTextBoxError = findViewById<TextView>(R.id.textViewDisplayTextBoxError)
         var textViewDisplayError = findViewById<TextView>(R.id.textViewDisplayError)
 
         //Declaring buttons(The IIE,2023)
@@ -34,14 +35,22 @@ class StatisticFunctions : AppCompatActivity() {
         btnAdd?.setOnClickListener {
             Toast.makeText(this@StatisticFunctions, "Add button clicked", Toast.LENGTH_LONG).show()
 
-            arrayListOfNumbers[counter] = editTextStatisticNumber.text.toString().toInt()// The code adds a number to the arrayListOfNumbers array. The number is obtained from the EditText called editTextStatisticNumber, which is converted to an integer using the toInt() method.
-            counter++ // The position in the array where the number is added is determined by a counter variable called counter, which is incremented after each number is added.
-            textViewDisplayStoredNumbers.text = arrayListOfNumbers.joinToString(" ")//The joinToString() method is used to convert the array to a string with each element separated by a space.
-            editTextStatisticNumber.setText("")
-            if (counter == 10) {//If statement for when the user enters the 10th number to display that there can only be 10 numbers entered.
-                textViewDisplayError.text = "More than 10 numbers can't be entered!"//Output message
-                textViewDisplayError.setTextColor(Color.parseColor("red"))//Displaying error message in red so users can know not to enter more then two numbers
+            if(editTextStatisticNumber.text.toString()==""){//TextBox validation
+                textViewDisplayTextBoxError.text="This is a required field!"
+                textViewDisplayTextBoxError.setTextColor(Color.parseColor("red"))
             }
+            else{
+                textViewDisplayTextBoxError.text=""//Resetting error message
+                arrayListOfNumbers[counter] = editTextStatisticNumber.text.toString().toInt()// The code adds a number to the arrayListOfNumbers array. The number is obtained from the EditText called editTextStatisticNumber, which is converted to an integer using the toInt() method.
+                counter++ // The position in the array where the number is added is determined by a counter variable called counter, which is incremented after each number is added.
+                textViewDisplayStoredNumbers.text = arrayListOfNumbers.joinToString(" ")//The joinToString() method is used to convert the array to a string with each element separated by a space.
+                editTextStatisticNumber.setText("")
+                if (counter == 10) {//If statement for when the user enters the 10th number to display that there can only be 10 numbers entered.
+                    textViewDisplayError.text = "More than 10 numbers can't be entered!"//Output message
+                    textViewDisplayError.setTextColor(Color.parseColor("red"))//Displaying error message in red so users can know not to enter more then two numbers
+                }
+            }
+
         }
         //Clear button(The IIE,2023)
         btnClear?.setOnClickListener {
@@ -49,6 +58,7 @@ class StatisticFunctions : AppCompatActivity() {
 
             //Resetting text views
             textViewDisplayStoredNumbers.text=""
+            textViewDisplayTextBoxError.text=""
             textViewDisplayError.text = ""
             textViewDisplayAnswer.text = ""
             //Resetting array list

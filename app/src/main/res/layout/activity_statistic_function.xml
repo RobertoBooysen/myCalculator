@@ -7,6 +7,19 @@
     tools:context=".StatisticFunctions">
 
   <TextView
+      android:id="@+id/textViewDisplayTextBoxError"
+      android:layout_width="248dp"
+      android:layout_height="36dp"
+      android:textColor="#000000"
+      android:textSize="20sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.098"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.207" />
+
+  <TextView
       android:id="@+id/textViewDisplayError"
       android:layout_width="352dp"
       android:layout_height="54dp"
@@ -37,10 +50,10 @@
       android:textSize="24sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.082"
+      app:layout_constraintHorizontal_bias="0.103"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.315" />
+      app:layout_constraintVertical_bias="0.362" />
 
   <EditText
       android:id="@+id/editTextStatisticNumber"
@@ -82,7 +95,7 @@
       app:layout_constraintHorizontal_bias="0.098"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.225" />
+      app:layout_constraintVertical_bias="0.268" />
 
   <Button
       android:id="@+id/btnAdd"
@@ -108,7 +121,7 @@
       app:layout_constraintHorizontal_bias="0.866"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.314" />
+      app:layout_constraintVertical_bias="0.38" />
 
   <Button
       android:id="@+id/btnCalculateAverage"
